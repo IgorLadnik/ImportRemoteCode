@@ -1,0 +1,28 @@
+{
+  "name": "importer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.ts",
+  "dependencies": {
+    "@types/node": "^13.9.2",
+    "buffer": "^5.4.3",
+    "dictionaryjs": "^1.0.9",
+    "express": "^4.17.1",
+    "msnodesqlv8": "^0.8.10",
+    "node-fetch": "^2.6.0",
+    "node-uuid": "^1.4.8",
+    "path": "^0.12.7",
+    "tsc": "^1.20150623.0",
+    "tslint": "^6.0.0",
+    "typescript": "^3.8.2",
+    "uuid": "^7.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
