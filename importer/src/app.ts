@@ -9,14 +9,14 @@ class Outer {
     }
 }
 
-const SCRIPT_BASE_URL = 'http://localhost:9000/' ;
+const scriptBaseUrl = 'http://localhost:9000/' ;
 
 (async function run() {
-    let dct = new Dictionary<string, any>();
-    dct.set('require', require);
-    dct.set('Outer', Outer);
+    let dctDependInj = new Dictionary<string, any>();
+    dctDependInj.set('require', require);
+    dctDependInj.set('Outer', Outer);
 
-    let rcl = new RemoteCodeLoader(SCRIPT_BASE_URL, dct);
+    let rcl = new RemoteCodeLoader(scriptBaseUrl, dctDependInj);
     let cmdFunc = await rcl.importRemoteCode('_from-far.js', 'n');
 
     let br = await cmdFunc.call(111);
