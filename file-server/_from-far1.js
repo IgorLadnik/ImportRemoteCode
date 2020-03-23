@@ -17,6 +17,8 @@ class Foo {
 let foo = new Foo(5, 10);
 console.log(foo.add());
 
+//debugger;
+
 const fs = require('fs');
 let contents = fs.readFileSync('data.txt', 'utf8');
 console.log(contents);
