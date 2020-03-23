@@ -14,15 +14,13 @@ const scriptBaseUrl = 'http://localhost:9000/' ;
 (async function run() {
     let dctDependInj = new Dictionary<string, any>();
     dctDependInj.set('require', require);
-    dctDependInj.set('RemoteCodeLoader', RemoteCodeLoader);
-    dctDependInj.set('scriptBaseUrl', scriptBaseUrl);
-    dctDependInj.set('dctDependInj', dctDependInj);
     dctDependInj.set('Outer', Outer);
-
+    dctDependInj.set('remoteCodeLoader', new RemoteCodeLoader(scriptBaseUrl, dctDependInj));
+    
     let rcl = new RemoteCodeLoader(scriptBaseUrl, dctDependInj);
     let cmdFunc = await rcl.importRemoteCode('_from-far1.js', 'n');
 
     let br = await cmdFunc.call(111);
-    //br = await cmdFunc.call(222);
+    br = await cmdFunc.call(222);
 })();
 

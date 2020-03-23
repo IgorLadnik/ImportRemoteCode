@@ -26,8 +26,7 @@ console.log(ob.concat('Aa', 'Dd'));
 
 console.log(n);
 
-let rcl = new RemoteCodeLoader(scriptBaseUrl, dctDependInj);
-let cmdFunc = await rcl.importRemoteCode('_from-far2.js', 'strArg');
+let cmdFunc = await remoteCodeLoader.importRemoteCode('_from-far2.js', 'strArg');
 let br = await cmdFunc.call('str. argparam.');
 
 console.log('****** END remote function from _from-far1.js');
