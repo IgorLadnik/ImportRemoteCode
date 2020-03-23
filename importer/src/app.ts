@@ -20,9 +20,9 @@ const scriptBaseUrl = 'http://localhost:9000/' ;
     dctDependInj.set('Outer', Outer);
 
     let rcl = new RemoteCodeLoader(scriptBaseUrl, dctDependInj);
-    let cmdFunc1 = await rcl.importRemoteCode('_from-far1.js', 'n');
+    let cmdFunc = await rcl.importRemoteCode('_from-far1.js', 'n');
 
-    let br = await cmdFunc1.call(111);
-    br = await cmdFunc1.call(222);
+    let br = await cmdFunc.call(111);
+    //br = await cmdFunc.call(222);
 })();
 
