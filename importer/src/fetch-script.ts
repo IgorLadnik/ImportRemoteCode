@@ -35,7 +35,8 @@ export class RemoteCodeLoader {
         let arr = ArrayUtils.merge(this.injections.keys(), args);
 
         try {
-            fn = new Function(...arr, await script.text());
+            let strFunc = `return (async () => { ${await script.text()} })()`;
+            fn = new Function(...arr, strFunc);
         } catch (err) {
             console.log(`*** ERROR: ${err}`);
             return new CmdFunc([], new Function(), false);
